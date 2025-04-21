@@ -17,6 +17,7 @@ import Animated, {
   withTiming,
   Easing,
 } from "react-native-reanimated";
+import { Link } from "expo-router";
 
 const Hero = () => {
   const { height, width } = useWindowDimensions();
@@ -110,9 +111,11 @@ const Hero = () => {
           onPress={handleGetStarted}
           className={`bg-indigo-500 rounded-3xl flex items-center justify-center px-6 ${buttonPadding} w-full`}
         >
-          <Text className={`font-bold text-white ${buttonTextSize}`}>
-            Get Started
-          </Text>
+          <Link href={"/(tabs)/Search"} >
+            <Text className={`font-bold text-white ${buttonTextSize}`}>
+              Get Started
+            </Text>
+          </Link>
         </TouchableOpacity>
       </Animated.View>
     </SafeAreaView>

@@ -1,5 +1,4 @@
 import {
-  Button,
   ScrollView,
   StyleSheet,
   Text,
@@ -10,6 +9,8 @@ import {
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Carousel from "@/components/ui/Carousel";
+import SelectSlider from "@/components/ui/SelectSlider";
+import ExplorePools from "@/components/ui/ExplorePools";
 
 const Search = () => {
   const { width, height } = useWindowDimensions();
@@ -21,32 +22,70 @@ const Search = () => {
   const buttonSize = width < 380 ? 12 : 14;
 
   return (
-    <SafeAreaView style={{ paddingHorizontal, paddingVertical }}>
-      <View className="mt-6 flex flex-row justify-between items-center">
+    <SafeAreaView
+      style={[styles.container, { paddingHorizontal, paddingVertical }]}
+    >
+      <View style={styles.header}>
         <TouchableOpacity>
-          <Text className="text-xl font-semibold text-purple-500">
-            Connect Wallet
-          </Text>
+          <Text style={styles.connectWalletText}>Connect Wallet</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text className="text-xl font-semibold text-purple-500">
-            Connect Wallet
-          </Text>
+          <Text style={styles.connectWalletText}>Connect Wallet</Text>
         </TouchableOpacity>
       </View>
-      <Text
-        className="text-4xl text-black font-bold "
-        style={{ marginTop: marginTop }}
-      >
-        Dashboard
-      </Text>
+
+      <Text style={[styles.dashboardTitle, { marginTop }]}>Dashboard</Text>
+
       <Carousel />
-      
-      <ScrollView></ScrollView>
+
+      <View style={styles.sliderContainer}>
+        <SelectSlider />
+      </View>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scrollContent}
+      >
+        <View style={styles.poolsContainer}>
+          <ExplorePools />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
 
 export default Search;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
+  scrollContent: {
+    flexGrow: 1,
+  },
+  header: {
+    marginTop: 6,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  connectWalletText: {
+    fontSize: 18,
+    fontWeight: "600",
+    color: "#8b5cf6",
+  },
+  dashboardTitle: {
+    fontSize: 36,
+    color: "#000",
+    fontWeight: "bold",
+  },
+  sliderContainer: {
+    marginVertical: 16,
+    height: 60,
+    marginBottom: 32,
+  },
+  poolsContainer: {
+    flex: 1,
+    marginBottom: 32,
+  },
+});

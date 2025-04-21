@@ -22,7 +22,7 @@ const _layout = () => {
   return (
     <Tabs
       screenOptions={{
-        tabBarShowLabel: true,
+        tabBarShowLabel: false,
         tabBarStyle: {
           position: "absolute",
           bottom: 10,
@@ -35,7 +35,7 @@ const _layout = () => {
         },
       }}
     >
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name="Hero"
         options={{
           title: "Hero",
@@ -44,7 +44,7 @@ const _layout = () => {
             <NavIcon srce={images.home} focused={focused} />
           ),
         }}
-      />
+      /> */}
       <Tabs.Screen
         name="Search"
         options={{

@@ -19,6 +19,8 @@
     "@react-native-masked-view/masked-view": "^0.3.2",
     "@react-navigation/bottom-tabs": "^7.2.0",
     "@react-navigation/native": "^7.0.14",
+    "@solana-mobile/mobile-wallet-adapter-protocol": "^2.1.5",
+    "@solana-mobile/mobile-wallet-adapter-protocol-web3js": "^2.1.5",
     "android": "file:",
     "expo": "~52.0.46",
     "expo-blur": "~14.0.3",
